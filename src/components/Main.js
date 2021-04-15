@@ -53,8 +53,8 @@ function Main(props) {
       <section className="cards" aria-label="Карточки мест">
         <ul className="cards__container">
           {
-            cards.map((card, i) => (
-              <li key={i}>
+            cards.map((card) => (
+              <li key={card._id}>
                 <Card card={card} viewer={userId} onCardClick={props.onOpenCard}/>
               </li>
             ))
