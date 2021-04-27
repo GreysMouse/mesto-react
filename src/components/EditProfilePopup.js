@@ -18,11 +18,6 @@ function EditProfilePopup(props) {
 
   const [isButtonHidden, setIsButtonHidden] = React.useState(false);
 
-  React.useEffect(() => {
-    setName(currentUser.name);
-    setDescription(currentUser.about);
-  }, [currentUser]);
-
   React.useEffect(() => {  
     setName(currentUser.name);
     setDescription(currentUser.about);
@@ -32,7 +27,7 @@ function EditProfilePopup(props) {
 
     setNameValdationMessage('');
     setDescriptionValdationMessage('');
-  }, [props.isOpen]);
+  }, [props.isOpen, currentUser]);
 
   React.useEffect(() => {
     isValidName && isValidDescription ? setIsButtonHidden(false) : setIsButtonHidden(true);

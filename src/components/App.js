@@ -119,10 +119,9 @@ function App() {
     api.updateProfile(name, description).then(updatedUser => {
       setCurrentUser(updatedUser);
       console.log('Профиль успешно обновлён!');
+      closeAllPopups();
     }).catch(err => {
       console.log(`${err}. Не удалось обновить профиль.`);
-    }).finally(() => {
-      closeAllPopups();
     });
   }
 
@@ -130,10 +129,9 @@ function App() {
     api.updateAvatar(avatarLink).then(updatedUser => {
       setCurrentUser(updatedUser);
       console.log('Аватар успешно обновлён!');
+      closeAllPopups();
     }).catch(err => {
       console.log(`${err}. Не удалось обновить аватар.`);
-    }).finally(() => {
-      closeAllPopups();
     });  
   }
 
@@ -141,10 +139,9 @@ function App() {
     api.addCard(title, link).then(params => {
       setCards([params, ...cards]);
       console.log('Карточка успешно добавлена!');
+      closeAllPopups();
     }).catch(err => {
       console.log(`${err}. Не удалось разместить карточку.`)
-    }).finally(() => {
-      closeAllPopups();
     });
   }
 
